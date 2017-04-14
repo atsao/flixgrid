@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a Flixgrid component 1`] = `
+<table>
+  <tbody>
+    <tr>
+      <td>
+        nothing
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
