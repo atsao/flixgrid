@@ -4,26 +4,108 @@ import PropTypes from 'prop-types';
 import TableHead from './TableHead';
 import TableBody from './TableBody';
 
-const Table = props => {
-  const { showHeaders, data, columns } = props || {};
+class Table extends Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <table>
-      {showHeaders && <TableHead />}
-      {data.length
-        ? <TableBody {...props} />
-        : <tbody>
-            <tr>
-              <td>nothing</td>
-            </tr>
-          </tbody>}
-    </table>
-  );
-};
+    this.state = {
+      sorting: {
+        dataKey: '',
+        direction: '',
+      },
+      filtering: {
+        dataKey: '',
+        query: '',
+      },
+    };
+  }
+
+  _handleSort = (dataKey, direction) => {
+    const { sorting } = this.state;
+    let newSorting = JSON.parse(JSON.stringify(sorting));
+    newSorting.dataKey = dataKey;
+    newSorting.direction = direction;
+
+    this.setState({
+      sorting: newSorting,
+    });
+  };
+
+  _handleFilter = (dataKey, query) => {
+    const { filtering } = this.state;
+    let newSorting = JSON.parse(JSON.stringify(filtering));
+    newSorting.dataKey = dataKey;
+    newSorting.query = query.toString();
+
+    this.setState({
+      filtering: newSorting,
+    });
+  };
+
+  _sortData = data => {
+    const { sorting: { dataKey, direction } } = this.state;
+
+    if (dataKey && direction) {
+      let high = 1;
+      let low = -1;
+      if (direction === 'desc') {
+        high = -1;
+        low = 1;
+      }
+      return data.sort((a, b) => a[dataKey] > b[dataKey] ? high : low);
+    } else {
+      return data;
+    }
+  };
+
+  _filterData = data => {
+    const { filtering: { dataKey, query } } = this.state;
+    if (dataKey && query) {
+      return data.filter(
+        d =>
+          d[dataKey].toString().toLowerCase().indexOf(query.toLowerCase()) > -1
+      );
+    } else {
+      return data;
+    }
+  };
+
+  _renderTableHead = () => {
+    const { sorting, filtering } = this.state;
+
+    return (
+      <TableHead
+        sort={this._handleSort}
+        sorting={sorting}
+        filter={this._handleFilter}
+        filtering={filtering}
+        {...this.props}
+      />
+    );
+  };
+
+  render() {
+    const { data, columns, showHeaders } = this.props;
+    const sortedData = this._sortData(data);
+    const filteredData = this._filterData(sortedData);
+
+    return (
+      <table>
+        {showHeaders && this._renderTableHead()}
+        <TableBody
+          data={filteredData}
+          columns={columns}
+          showHeaders={showHeaders}
+        />
+      </table>
+    );
+  }
+}
 
 Table.propTypes = {
-  data: PropTypes.array.isRequired,
+  data: PropTypes.oneOfType([PropTypes.array, PropTypes.string]).isRequired,
   columns: PropTypes.array.isRequired,
+  showHeaders: PropTypes.bool,
 };
 
 export default Table;

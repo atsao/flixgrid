@@ -47,7 +47,7 @@ class Flixgrid extends Component {
         display: 'Genre',
       },
     ];
-    return <Table data={data} columns={columns} />;
+    return <Table data={data} columns={columns} showHeaders />;
   }
 }
 

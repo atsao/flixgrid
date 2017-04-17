@@ -8,13 +8,18 @@ const TableBody = props => {
 
   return (
     <tbody>
-      {data.map((data, i) => (
-        <TableRow key={i} columns={columns} data={data} />
-      ))}
+      {data && data.length
+        ? data.map((data, i) => (
+            <TableRow key={i} columns={columns} data={data} />
+          ))
+        : <TableRow columns={columns} data="No data" _isEmpty />}
     </tbody>
   );
 };
 
-TableBody.propTypes = {};
+TableBody.propTypes = {
+  data: PropTypes.array,
+  columns: PropTypes.array,
+};
 
 export default TableBody;

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a Table component 1`] = `
+<table>
+  <tbody>
+    <tr>
+      <td
+        colSpan={0}
+      >
+        No data
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`renders a TableBody component 1`] = `
+<tbody>
+  <tr>
+    <td
+      colSpan={0}
+    >
+      No data
+    </td>
+  </tr>
+</tbody>
+`;
+
+exports[`renders a TableData component 1`] = `<td />`;
+
+exports[`renders a TableHead component 1`] = `
+<thead>
+  <tr />
+</thead>
+`;
+
+exports[`renders a TableRow component 1`] = `<tr />`;

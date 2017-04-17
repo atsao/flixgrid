@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import Root from '../src/components/Root';
-import Flixgrid from '../src/components/Flixgrid';
+import Root from './Root';
+import Flixgrid from './Flixgrid';
 
 describe('<Root />', () => {
   it('should render a wrapper element', () => {
