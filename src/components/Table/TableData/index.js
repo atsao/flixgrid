@@ -10,7 +10,6 @@ class TableData extends Component {
       sort,
       sorting,
       filter,
-      filtering,
     } = this.props;
     const content = display || '';
 
@@ -45,7 +44,7 @@ class TableData extends Component {
     const content = data || '';
 
     return (
-      <td colSpan={columns.length}>
+      <td colSpan={columns && columns.length}>
         {render ? render(content) : content}
       </td>
     );
@@ -85,6 +84,7 @@ TableData.propTypes = {
   dataKey: PropTypes.string,
   sort: PropTypes.func,
   sorting: PropTypes.object,
+  filter: PropTypes.func,
 };
 
 export default TableData;

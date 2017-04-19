@@ -16,28 +16,24 @@ class TableRow extends Component {
       filtering,
     } = this.props;
 
-    return columns.map((child, i) => {
-      const { dataKey, display, render } = child;
-
-      return (
-        <TableData
-          key={i}
-          columns={columns}
-          data={data}
-          _isHeader={_isHeader}
-          _isEmpty={_isEmpty}
-          sort={sort}
-          sorting={sorting}
-          filter={filter}
-          filtering={filtering}
-          {...child}
-        />
-      );
-    });
+    return columns.map((child, i) => (
+      <TableData
+        key={i}
+        columns={columns}
+        data={data}
+        _isHeader={_isHeader}
+        _isEmpty={_isEmpty}
+        sort={sort}
+        sorting={sorting}
+        filter={filter}
+        filtering={filtering}
+        {...child}
+      />
+    ));
   };
 
   render() {
-    const { data, columns, _isHeader, _isEmpty } = this.props;
+    const { _isHeader, _isEmpty } = this.props;
     return (
       <tr>
         {_isEmpty
@@ -57,6 +53,10 @@ TableRow.propTypes = {
   columns: PropTypes.array,
   _isHeader: PropTypes.bool,
   _isEmpty: PropTypes.bool,
+  sort: PropTypes.func,
+  sorting: PropTypes.object,
+  filter: PropTypes.func,
+  filtering: PropTypes.object,
 };
 
 export default TableRow;

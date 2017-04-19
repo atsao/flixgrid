@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import sinon from 'sinon';
 
 import Table from '../Table';
 import TableHead from '../Table/TableHead';
@@ -23,6 +22,10 @@ describe('<Table />', () => {
         {
           item: 'Grape',
           price: 3.00,
+        },
+        {
+          item: 'Grapefruit',
+          price: 2.50,
         },
       ],
       columns: [
@@ -81,7 +84,7 @@ describe('<Table />', () => {
     const wrapper = mount(<Table {...props} />);
     expect(wrapper.find('.sort-descending').length).toBeGreaterThan(0);
     wrapper.find('.sort-descending').first().simulate('click');
-    expect(wrapper.find('tbody td').first().text()).toBe('Grape');
+    expect(wrapper.find('tbody td').first().text()).toBe('Grapefruit');
     expect(
       wrapper.find('.sort-descending').first().prop('disabled')
     ).toBeTruthy();
@@ -95,8 +98,22 @@ describe('<Table />', () => {
       .find('.filter')
       .first()
       .simulate('change', { target: { value: 'Grape' } });
-    expect(wrapper.find('tbody').children().length).toBe(1);
+    expect(wrapper.find('tbody').children().length).toBe(2);
   });
 
-  it('should filter sorted data by query');
+  it('should filter sorted data by query', () => {
+    props.showHeaders = true;
+    const wrapper = mount(<Table {...props} />);
+    wrapper.find('.sort-ascending').first().simulate('click');
+    expect(wrapper.find('.filter').length).toBeGreaterThan(0);
+    expect(wrapper.find('tbody td').first().text()).toBe('Apple');
+    wrapper
+      .find('.filter')
+      .first()
+      .simulate('change', { target: { value: 'Grape' } });
+    expect(wrapper.find('tbody').children().length).toBe(2);
+    expect(wrapper.find('tbody td').first().text()).toBe('Grape');
+    wrapper.find('.sort-descending').first().simulate('click');
+    expect(wrapper.find('tbody td').first().text()).toBe('Grapefruit');
+  });
 });

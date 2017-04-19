@@ -103,8 +103,8 @@ class Table extends Component {
 }
 
 Table.propTypes = {
-  data: PropTypes.oneOfType([PropTypes.array, PropTypes.string]).isRequired,
-  columns: PropTypes.array.isRequired,
+  data: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
+  columns: PropTypes.array,
   showHeaders: PropTypes.bool,
 };
 

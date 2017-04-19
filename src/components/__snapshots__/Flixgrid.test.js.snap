@@ -2,104 +2,10 @@
 
 exports[`renders a Flixgrid component 1`] = `
 <table>
-  <thead>
-    <tr>
-      <td>
-        <strong>
-          Title
-        </strong>
-        <button
-          className="sort-ascending"
-          disabled={false}
-          onClick={[Function]}
-        >
-          Asc
-        </button>
-        <button
-          className="sort-descending"
-          disabled={false}
-          onClick={[Function]}
-        >
-          Desc
-        </button>
-        <input
-          className="filter"
-          onChange={[Function]}
-          type="text"
-        />
-      </td>
-      <td>
-        Release Year
-        <button
-          className="sort-ascending"
-          disabled={false}
-          onClick={[Function]}
-        >
-          Asc
-        </button>
-        <button
-          className="sort-descending"
-          disabled={false}
-          onClick={[Function]}
-        >
-          Desc
-        </button>
-        <input
-          className="filter"
-          onChange={[Function]}
-          type="text"
-        />
-      </td>
-      <td>
-        Rating
-        <button
-          className="sort-ascending"
-          disabled={false}
-          onClick={[Function]}
-        >
-          Asc
-        </button>
-        <button
-          className="sort-descending"
-          disabled={false}
-          onClick={[Function]}
-        >
-          Desc
-        </button>
-        <input
-          className="filter"
-          onChange={[Function]}
-          type="text"
-        />
-      </td>
-      <td>
-        Genre
-        <button
-          className="sort-ascending"
-          disabled={false}
-          onClick={[Function]}
-        >
-          Asc
-        </button>
-        <button
-          className="sort-descending"
-          disabled={false}
-          onClick={[Function]}
-        >
-          Desc
-        </button>
-        <input
-          className="filter"
-          onChange={[Function]}
-          type="text"
-        />
-      </td>
-    </tr>
-  </thead>
   <tbody>
     <tr>
       <td
-        colSpan={4}
+        colSpan={undefined}
       >
         No data
       </td>
