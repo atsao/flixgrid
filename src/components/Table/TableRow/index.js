@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import TableData from '../TableData';
 
+import styles from './index.css';
+
 class TableRow extends Component {
   _renderCells = () => {
     const {
@@ -33,9 +35,13 @@ class TableRow extends Component {
   };
 
   render() {
-    const { _isHeader, _isEmpty } = this.props;
+    const { _isHeader, _isEmpty, className } = this.props;
     return (
-      <tr>
+      <tr
+        className={
+          `${!_isHeader && styles['flixgrid-tr']} ${className ? className : ''}`
+        }
+      >
         {_isEmpty
           ? <TableData {...this.props} _isEmpty />
           : this._renderCells()}
@@ -57,6 +63,7 @@ TableRow.propTypes = {
   sorting: PropTypes.object,
   filter: PropTypes.func,
   filtering: PropTypes.object,
+  className: PropTypes.string,
 };
 
 export default TableRow;

@@ -1,0 +1,11 @@
+.flixgrid-thead td {
+  background: #eee;
+  border-bottom: solid 1px #ddd;
+  font-weight: 800;
+  padding: 10px;
+}
+
+.flixgrid-thead td:first-child,
+.flixgrid-thead td:last-child {
+  border-top-left-radius: 4px;
+}

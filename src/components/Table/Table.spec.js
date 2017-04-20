@@ -36,6 +36,7 @@ describe('<Table />', () => {
         {
           dataKey: 'price',
           price: 'Price',
+          render: data => <strong>{data}</strong>,
         },
       ],
     };

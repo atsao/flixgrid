@@ -1,8 +1,10 @@
-![Flixgrid Demo](flixgrid.gif "Flixgrid Demo")
+![Flixgrid Demo](flixgrid-updated.gif "Flixgrid Demo")
 
 # Flixgrid
 
 This repo contains an datagrid component. Data and column props passed in can be customized for custom-rendered content. This demo features sorting and keyword filtering.
+
+You can view the old demo [here](flixgrid.gif).
 
 ## Getting Started
 
@@ -30,7 +32,7 @@ You can run the production build locally using `NODE_ENV=production yarn start`.
 ## Technical Challenges
 
   1. **Components and Props** - Significant time was used architecting the flow of state as props from top-level components (`Flixgrid`, `Table`) to lower-level ones. Since I separated out pieces of a table (row, cell, body, head), many relevant pieces of state needed to be passed along, which may be seen as component prop bloat.
-    * However, much of the logic would be obscured away from a user anyhow (since he or she would use just the top-level `Table`).
+      * However, much of the logic would be obscured away from a user anyhow (since he or she would use just the top-level `Table`).
 
 ## Technical Considerations
 
@@ -44,12 +46,12 @@ I used my own [react-quick-start](https://github.com/atsao/react-quick-start) bo
 ## Future Features
 
 1. **Sorting**
-  * Ability to customize sorting further (sort by column 1, then column 2, etc.)
-  * Ability to toggle sorting instead of separate buttons
+    * Ability to customize sorting further (sort by column 1, then column 2, etc.)
+    * Ability to toggle sorting instead of separate buttons
 2. **Filtering**
-  * Ability to filter using dropdown (e.g., checkboxes)
+    * Ability to filter using dropdown (e.g., checkboxes)
 3. **UX**
-  * Ability to show/hide filter input using toggle
+    * Ability to show/hide filter input using toggle
 
 ## To Do
 

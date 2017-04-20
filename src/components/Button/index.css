@@ -1,0 +1,30 @@
+.btn {
+  background: transparent;
+  border: solid 1px transparent;
+  border-radius: 4px;
+  display: inline-block;
+  outline: none;
+  padding: 4px 8px;
+  transition: all 0.2s ease-out;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.btn-ghost,
+.btn-ghost:disabled:hover  {
+  background: #fff;
+  border: solid 1px #ddd;
+  color: #777;
+}
+
+.btn-ghost:hover {
+  border-color: #29a9d1;
+  color: #29a9d1;
+}

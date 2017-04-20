@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from '../assets/css/index.css';
 import data from '../data.json';
 
+import styles from './Root.css';
 import Flixgrid from './Flixgrid';
 
 class Root extends Component {
@@ -46,6 +46,7 @@ class Root extends Component {
         display: 'Genre',
       },
     ];
+
     return (
       <div className={styles['wrapper']}>
         <Flixgrid data={data} columns={columns} showHeaders />

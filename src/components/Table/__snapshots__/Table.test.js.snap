@@ -1,10 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a Table component 1`] = `
-<table>
+<table
+  className="flixgrid-table"
+>
   <tbody>
-    <tr>
+    <tr
+      className="flixgrid-tr "
+    >
       <td
+        className="flixgrid-td-empty"
         colSpan={0}
       >
         No data
@@ -16,8 +21,11 @@ exports[`renders a Table component 1`] = `
 
 exports[`renders a TableBody component 1`] = `
 <tbody>
-  <tr>
+  <tr
+    className="flixgrid-tr "
+  >
     <td
+      className="flixgrid-td-empty"
       colSpan={0}
     >
       No data
@@ -26,12 +34,22 @@ exports[`renders a TableBody component 1`] = `
 </tbody>
 `;
 
-exports[`renders a TableData component 1`] = `<td />`;
+exports[`renders a TableData component 1`] = `
+<td
+  className="flixgrid-td"
+/>
+`;
 
 exports[`renders a TableHead component 1`] = `
 <thead>
-  <tr />
+  <tr
+    className="false flixgrid-thead"
+  />
 </thead>
 `;
 
-exports[`renders a TableRow component 1`] = `<tr />`;
+exports[`renders a TableRow component 1`] = `
+<tr
+  className="flixgrid-tr "
+/>
+`;

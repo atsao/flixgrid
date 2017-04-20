@@ -1,10 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a Flixgrid component 1`] = `
-<table>
+<table
+  className="flixgrid-table"
+>
   <tbody>
-    <tr>
+    <tr
+      className="flixgrid-tr "
+    >
       <td
+        className="flixgrid-td-empty"
         colSpan={undefined}
       >
         No data

@@ -1,0 +1,16 @@
+body {
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 90%
+}
+
+@media (max-width: 568px) {
+  .wrapper {
+    overflow: scroll;
+    min-width: 48em;
+  }
+}

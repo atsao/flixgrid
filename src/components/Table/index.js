@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import styles from './index.css';
 import TableHead from './TableHead';
 import TableBody from './TableBody';
 
@@ -90,7 +91,7 @@ class Table extends Component {
     const filteredData = this._filterData(sortedData);
 
     return (
-      <table>
+      <table className={styles['flixgrid-table']}>
         {showHeaders && this._renderTableHead()}
         <TableBody
           data={filteredData}

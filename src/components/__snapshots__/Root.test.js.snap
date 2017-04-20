@@ -4,104 +4,125 @@ exports[`renders a Root component 1`] = `
 <div
   className="wrapper"
 >
-  <table>
+  <table
+    className="flixgrid-table"
+  >
     <thead>
-      <tr>
+      <tr
+        className="false flixgrid-thead"
+      >
         <td>
-          <strong>
-            Title
-          </strong>
+          Title
+           
           <button
-            className="sort-ascending"
+            className="sort-ascending btn btn-ghost "
             disabled={false}
             onClick={[Function]}
           >
-            Asc
+            ▲
           </button>
+           
           <button
-            className="sort-descending"
+            className="sort-descending btn btn-ghost "
             disabled={false}
             onClick={[Function]}
           >
-            Desc
+            ▼
           </button>
+           
           <input
             className="filter"
             onChange={[Function]}
+            placeholder="Filter on title"
             type="text"
           />
         </td>
         <td>
           Release Year
+           
           <button
-            className="sort-ascending"
+            className="sort-ascending btn btn-ghost "
             disabled={false}
             onClick={[Function]}
           >
-            Asc
+            ▲
           </button>
+           
           <button
-            className="sort-descending"
+            className="sort-descending btn btn-ghost "
             disabled={false}
             onClick={[Function]}
           >
-            Desc
+            ▼
           </button>
+           
           <input
             className="filter"
             onChange={[Function]}
+            placeholder="Filter on release year"
             type="text"
           />
         </td>
         <td>
           Rating
+           
           <button
-            className="sort-ascending"
+            className="sort-ascending btn btn-ghost "
             disabled={false}
             onClick={[Function]}
           >
-            Asc
+            ▲
           </button>
+           
           <button
-            className="sort-descending"
+            className="sort-descending btn btn-ghost "
             disabled={false}
             onClick={[Function]}
           >
-            Desc
+            ▼
           </button>
+           
           <input
             className="filter"
             onChange={[Function]}
+            placeholder="Filter on rating"
             type="text"
           />
         </td>
         <td>
           Genre
+           
           <button
-            className="sort-ascending"
+            className="sort-ascending btn btn-ghost "
             disabled={false}
             onClick={[Function]}
           >
-            Asc
+            ▲
           </button>
+           
           <button
-            className="sort-descending"
+            className="sort-descending btn btn-ghost "
             disabled={false}
             onClick={[Function]}
           >
-            Desc
+            ▼
           </button>
+           
           <input
             className="filter"
             onChange={[Function]}
+            placeholder="Filter on genre"
             type="text"
           />
         </td>
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr
+        className="flixgrid-tr "
+      >
         <td
+          className="flixgrid-td-empty"
           colSpan={4}
         >
           No data

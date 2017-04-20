@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import TableRow from '../TableRow';
 
+import styles from './index.css';
+
 const TableHead = props => {
   const { data, columns, sort, sorting, filter, filtering } = props;
 
@@ -16,6 +18,7 @@ const TableHead = props => {
         sorting={sorting}
         filter={filter}
         filtering={filtering}
+        className={styles['flixgrid-thead']}
       />
     </thead>
   );

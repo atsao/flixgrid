@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import Button from '../../Button';
+
+import styles from './index.css';
+
 class TableData extends Component {
   _renderHeader = () => {
     const {
       display,
       dataKey,
-      render,
       sort,
       sorting,
       filter,
@@ -15,25 +18,28 @@ class TableData extends Component {
 
     return (
       <td>
-        {render ? render(content) : content}
-        <button
+        {content}&nbsp;
+        <Button
           onClick={() => sort(dataKey, 'asc')}
           disabled={sorting.dataKey === dataKey && sorting.direction === 'asc'}
-          className="sort-ascending"
+          className={styles['sort-ascending']}
+          ghost
         >
-          Asc
-        </button>
-        <button
+          ▲
+        </Button>&nbsp;
+        <Button
           onClick={() => sort(dataKey, 'desc')}
           disabled={sorting.dataKey === dataKey && sorting.direction === 'desc'}
-          className="sort-descending"
+          className={styles['sort-descending']}
+          ghost
         >
-          Desc
-        </button>
+          ▼
+        </Button>&nbsp;
         <input
           type="text"
           onChange={e => filter(dataKey, e.target.value)}
-          className="filter"
+          className={styles['filter']}
+          placeholder={display && `Filter on ${display.toLowerCase()}`}
         />
       </td>
     );
@@ -44,7 +50,10 @@ class TableData extends Component {
     const content = data || '';
 
     return (
-      <td colSpan={columns && columns.length}>
+      <td
+        colSpan={columns && columns.length}
+        className={styles['flixgrid-td-empty']}
+      >
         {render ? render(content) : content}
       </td>
     );
@@ -63,7 +72,7 @@ class TableData extends Component {
     }
 
     return (
-      <td>
+      <td className={styles['flixgrid-td']}>
         {render ? render(content) : content}
       </td>
     );
